@@ -1,0 +1,48 @@
+{
+    "$schema": "https://github.com/glzr-io/zebar/raw/v3.1.0/resources/zpack-schema.json",
+    "name": "rose-pine",
+    "version": "0.0.0",
+    "description": "",
+    "tags": [],
+    "previewImages": [],
+    "repositoryUrl": "",
+    "widgets": [
+        {
+            "name": "main",
+            "htmlPath": "./index.html",
+            "zOrder": "normal",
+            "shownInTaskbar": false,
+            "focused": false,
+            "resizable": false,
+            "transparent": true,
+            "includeFiles": [
+                "**/**"
+            ],
+            "caching": {
+                "defaultDuration": 604800,
+                "rules": []
+            },
+            "privileges": {
+                "shellCommands": []
+            },
+            "presets": [
+                {
+                    "name": "default",
+                    "anchor": "top_center",
+                    "offsetX": "0px",
+                    "offsetY": "5px",
+                    "width": "1895px",
+                    "height": "32px",
+                    "monitorSelection": {
+                        "type": "all"
+                    },
+                    "dockToEdge": {
+                        "enabled": false,
+                        "edge": null,
+                        "windowMargin": "0px"
+                    }
+                }
+            ]
+        }
+    ]
+}

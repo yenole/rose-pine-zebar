@@ -36,36 +36,38 @@ function App() {
 
     return (
         <div className="flex flex-row justify-between w-full h-full text-sm">
-            <div className="bg-[#342d38] px-2 py-1 rounded-full shadow-lg flex items-center space-x-2">
-                <div className="bg-[#483442] rounded-full  px-1 py-0.5 flex items-center" >
-                    <HeartPulse className="flex items-center justify-center size-[18px] text-[#eb6f92]" />
+            <div className="flex items-center space-x-2">
+                <div className="bg-[#483442] rounded-full  px-2 py-1 flex items-center" >
+                    <HeartPulse className="flex items-center justify-center size-[16px] text-[#eb6f92]" />
                 </div>
-                <div className="bg-[#443a4a] rounded-full px-1 py-0.5 flex flex-row gap-x-2 items-center">
-                    <Rocket className="flex items-center justify-center text-[#bda1de] size-[18px]" />
-                    <span className="flex items-center justify-center text-[#bda1de] text-sm pr-2">{mem_usage}GiB</span>
+                <div className="bg-[#443a4a] rounded-full px-2 py-1 flex flex-row gap-x-2 items-center">
+                    <Rocket className="flex items-center justify-center text-[#bda1de] size-[16px]" />
+                    <span className="flex items-center justify-center text-[#bda1de] text-xs font-bold pr-2">{mem_usage}GiB</span>
                 </div>
-                <div className="bg-[#483c46] rounded-full px-1 py-0.5 flex flex-row gap-x-2 items-center">
-                    <Cpu className="flex items-center justify-center text-[#eabbb9] size-[18px]" />
-                    <span className="flex items-center justify-center text-[#eabbb9] text-sm pr-2">{cpu_usage}%</span>
+                <div className="bg-[#483c46] rounded-full px-2 py-1 flex flex-row gap-x-2 items-center">
+                    <Cpu className="flex items-center justify-center text-[#eabbb9] size-[16px]" />
+                    <span className="flex items-center justify-center text-[#eabbb9] text-xs font-bold pr-2">{cpu_usage}%</span>
                 </div>
-                {output.glazewm?.currentWorkspaces.map((v, i) =>
-                    <Circle className={cn(Colors[i], "cursor-pointer", v.hasFocus ? "opacity-100" : "opacity-50")} strokeWidth={4} size="18" onClick={() => onWsClick(v.name)} />
-                )}
+                <div className="bg-[#483c46] rounded-full px-2 py-1 flex flex-row gap-x-2 items-center">
+                    {output.glazewm?.currentWorkspaces.map((v, i) =>
+                        <Circle className={cn(Colors[i], "cursor-pointer size-[16px]", v.hasFocus ? "opacity-100" : "opacity-50")} strokeWidth={4} onClick={() => onWsClick(v.name)} />
+                    )}
+                </div>
             </div>
-            {title && <div className="bg-[#342d38] px-2 py-1 rounded-full shadow-lg flex items-center space-x-2">
-                <div className="bg-[#483c46] rounded-full px-1 py-0.5 flex flex-row gap-x-2 items-center">
-                    <Circle className={cn("flex items-center justify-center size-[18px]", Colors[focus])} strokeWidth={4} />
-                    <span className="flex items-center justify-center text-[#eabbb9] text-sm pr-2">{title}</span>
-                </div>
-            </div>}
-            <div className="bg-[#3A3532] dark:bg-[#3A3532] px-2 py-1 rounded-full shadow-lg flex items-center">
-                <div className="bg-[#493d3f] rounded-full px-1 py-0.5 flex flex-row gap-x-1 items-center">
-                    <Weather className="flex items-center justify-center text-[#e2b170] size-[18]" />
-                    <span className="flex items-center justify-center text-[#e2b170] text-sm pr-2">{celsius}°</span>
+            <div className="fixed w-full z-[-1]  flex py-0.5 justify-center">
+                {title && <div className="bg-[#342d38] p-1 rounded-full shadow-lg transition-[width] duration-1000 flex flex-row items-center space-x-2">
+                    <Circle className={cn("flex items-center justify-center size-[16px]", Colors[focus])} strokeWidth={4} />
+                    <span className="flex items-center justify-center text-xs text-white/70 pr-2 font-bold">{title}</span>
+                </div>}
+            </div>
+            <div className="bg-[#3A3532] px-2 py-1 rounded-full shadow-lg flex items-center">
+                <div className="flex flex-row items-center gap-x-2">
+                    <Weather className="flex items-center justify-center text-[#e2b170] size-[16px]" />
+                    <span className="flex items-center justify-center text-[#e2b170] text-xs font-bold pr-2">{celsius}°</span>
                 </div>
                 <Dot size="20" className="text-white/80" strokeWidth={5} />
                 <div className="flex flex-row gap-x-0.5 items-center">
-                    <span className="flex items-center justify-center text-white/80 text-sm">{times}</span>
+                    <span className="flex items-center justify-center text-white/80 text-xs font-bold pr-2">{times}</span>
                 </div>
             </div>
         </div >

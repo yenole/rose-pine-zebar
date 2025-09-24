@@ -1,4 +1,4 @@
-import type { GlazeWmOutput } from "zebar";
+import type { GlazeWmOutput, NetworkOutput, NetworkTraffic } from "zebar";
 
 export const getWindowTitle = (glazewm: GlazeWmOutput): string | null => {
     const focusedWorkspace = glazewm.focusedWorkspace;
@@ -14,3 +14,13 @@ export const getWindowTitle = (glazewm: GlazeWmOutput): string | null => {
         : `Workspace ${focusedWorkspace.name}`;
     return focusedWorkspaceDisplayName;
 };
+
+export const getTraffic = (output: NetworkOutput): { value: number, unit: string } => {
+    const traffic = output.traffic as NetworkTraffic
+    return { value: traffic.received.siValue, unit: traffic.received.siUnit }
+}
+
+export const format_time = (now: number): string => {
+    const unix = new Date(now);
+    return `${unix.getHours().toString().padStart(2, "0")}:${unix.getMinutes().toString().padStart(2, "0")}`
+}

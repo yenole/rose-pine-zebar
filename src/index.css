@@ -4,3 +4,10 @@ body{
     font-family:'Maple Mono NF CN', sans-serif;
 }
 
+* {
+    user-select: none;               /* 标准属性 */
+    -webkit-user-select: none;       /* Chrome、Safari、iOS */
+    -moz-user-select: none;          /* 老版 Firefox */
+    -ms-user-select: none;           /* IE/Edge（旧版） */
+}
+

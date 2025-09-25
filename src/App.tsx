@@ -1,5 +1,5 @@
 import { Circle, CloudLightningIcon, CloudMoonIcon, CloudMoonRainIcon, CloudRain, CloudRainWindIcon, CloudyIcon, Cpu, Dot, HeartPulse, MoonIcon, Music, Rocket, SnowflakeIcon, SunIcon, Wifi } from "lucide-react"
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import * as zebar from "zebar"
 import { cn } from "./lib/utils";
 import { format_time, getTraffic, getWindowTitle } from "./lib/glazewm";
@@ -36,6 +36,13 @@ function App() {
     const onWsClick = async (name: string) => {
         output.glazewm?.runCommand(`focus --workspace ${name}`)
     }
+
+
+    useEffect(() => {
+        const blockContextMenu = (e: MouseEvent) => e.preventDefault();
+        document.addEventListener('contextmenu', blockContextMenu, true);
+        return () => { document.removeEventListener('contextmenu', blockContextMenu, true); };
+    }, []);
 
     return (
         <div className="flex flex-row justify-between w-full h-full text-sm px-3">

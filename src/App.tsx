@@ -68,7 +68,7 @@ function App() {
                     )}
                 </div>
             </div>
-            <div className="fixed w-full z-[-1]  flex py-0.5 justify-center">
+            <div className="fixed w-full z-[-1]  flex justify-center">
                 {title && <div className="bg-[#342d38] p-1 rounded-full shadow-lg transition-[width] duration-1000 flex flex-row items-center space-x-2">
                     <Circle className={cn("flex items-center justify-center size-[16px]", Colors[focus])} strokeWidth={4} />
                     <span className="flex items-center justify-center text-xs text-white/70 pr-2 font-bold">{title}</span>

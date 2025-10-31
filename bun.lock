@@ -6,7 +6,6 @@
       "dependencies": {
         "@tailwindcss/vite": "^4.1.13",
         "clsx": "^2.1.1",
-        "lucide": "^0.544.0",
         "lucide-react": "^0.544.0",
         "react-dom": "^19.1.1",
         "tailwind-merge": "^3.3.1",
@@ -458,8 +457,6 @@
     "lodash.merge": ["lodash.merge@4.6.2", "", {}, "sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ=="],
 
     "lru-cache": ["lru-cache@5.1.1", "", { "dependencies": { "yallist": "^3.0.2" } }, "sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w=="],
-
-    "lucide": ["lucide@0.544.0", "", {}, "sha512-U5ORwr5z9Sx7bNTDFaW55RbjVdQEnAcT3vws9uz3vRT1G4XXJUDAhRZdxhFoIyHEvjmTkzzlEhjSLYM5n4mb5w=="],
 
     "lucide-react": ["lucide-react@0.544.0", "", { "peerDependencies": { "react": "^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0" } }, "sha512-t5tS44bqd825zAW45UQxpG2CvcC4urOwn2TrwSH8u+MjeE+1NnWl6QqeQ/6NdjMqdOygyiT9p3Ev0p1NJykxjw=="],
 

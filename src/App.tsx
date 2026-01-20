@@ -68,16 +68,16 @@ function App() {
                     )}
                 </div>
             </div>
-            <div className="fixed w-full z-[-1]  flex justify-center">
-                {title && <div className="bg-[#342d38] p-1 rounded-full shadow-lg transition-[width] duration-1000 flex flex-row items-center space-x-2">
-                    <Circle className={cn("flex items-center justify-center size-[16px]", Colors[focus])} strokeWidth={4} />
-                    <span className="flex items-center justify-center text-xs text-white/70 pr-2 font-bold">{title}</span>
+            <div className="fixed w-full z-[-1] flex justify-center">
+                {title && <div className="bg-[#342d38] max-w-[50dvw] p-1 rounded-full shadow-lg transition-[width] duration-1000 flex flex-row items-center space-x-2">
+                    <Circle className={cn("flex w-[16px] items-center justify-center size-[16px]", Colors[focus])} strokeWidth={4} />
+                    <span className="flex-1 text-xs text-white/70 pr-2 font-bold truncate">{title}</span>
                 </div>}
             </div>
-            <div className="flex items-center space-x-2 ">
-                {music && <div className="bg-[#483c46] rounded-full px-2 py-1 flex flex-row gap-x-2 items-center">
+            <div className="flex items-center space-x-2 max-w-[30%]">
+                {music && <div className="bg-[#483c46] max-w-[12dvw] rounded-full px-2 py-1 flex flex-row gap-x-2 items-center whitespace-nowrap overflow-hidden">
                     <Music className="flex items-center justify-center text-[#eabbb9] size-[16px]" />
-                    <span className="text-[#eabbb9] text-xs font-bold pr-2">{music} </span>
+                    <span className="flex-1 text-[#eabbb9] text-xs font-bold pr-2 truncate">{music} </span>
                 </div>}
                 <div className="bg-[#483c46] rounded-full px-2 py-1 flex flex-row gap-x-2 items-center">
                     <Wifi className="flex items-center justify-center text-[#bda1de] size-[16px]" />
